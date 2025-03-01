@@ -1,43 +1,23 @@
-import { StyleSheet, Image, Platform } from "react-native";
+import { StyleSheet, Image, Platform, View } from "react-native";
 
-import { Collapsible } from "@/components/Collapsible";
-import { ExternalLink } from "@/components/ExternalLink";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
+import Header from "@/components/header";
+import SearchInput from "@/components/SearchInput";
 
 export default function MenuScreen() {
   return (
-    <>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Menu</ThemedText>
-      </ThemedView>
-
-      <Collapsible title="Animations">
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The{" "}
-              <ThemedText type="defaultSemiBold">
-                components/ParallaxScrollView.tsx
-              </ThemedText>{" "}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </>
+    <View style={styles.appContainer}>
+      <Header />
+      <SearchInput />
+      {/* <CategoryList /> */}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: "#808080",
-    bottom: -90,
-    left: -35,
-    position: "absolute",
-  },
-  titleContainer: {
-    flexDirection: "row",
-    gap: 8,
+  appContainer: {
+    paddingTop: 50,
+    flex: 1,
+    paddingHorizontal: 16,
+    backgroundColor: "#000",
   },
 });

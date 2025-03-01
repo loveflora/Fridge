@@ -25,7 +25,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        // tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
@@ -34,6 +34,7 @@ export default function TabLayout() {
             // Use a transparent background on iOS to show the blur effect
             position: "absolute",
             paddingTop: 10,
+            borderTopWidth: 0,
           },
           default: {
             paddingTop: 10,
@@ -51,9 +52,6 @@ export default function TabLayout() {
               <MaterialCommunityIcons size={28} name="fridge" color={color} />
             </View>
           ),
-          // tabBarLabelStyle: {
-          //   marginTop: 4,
-          // },
         }}
       />
       <Tabs.Screen
